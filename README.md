@@ -230,6 +230,8 @@ TArraySpot GetGrid(void)
 void* OWNER
 ```
 
+---
+
 ### 5. TLayer класс картографического слоя
 Слой – основное понятие, с которым сталкивается пользователь при выведении графической информации на электронную карту.
 #### Публичные типы
@@ -546,7 +548,8 @@ void AddRegionQuick(unsigned int ID, std::string Name, TSpot Spot, QPen Pen, QBr
 Синтаксис:
 
 ```cpp
-void AddPointQuick(unsigned int ID, std::string Name, TTypeSymbol Type, TOnePoint Point, QPen Pen, QBrush Brush)
+void AddPointQuick(unsigned int ID, std::string Name, TTypeSymbol Type, 
+                   TOnePoint Point, QPen Pen, QBrush Brush)
 ```
 
 5.18. _AddPoint_ добавляет в слой объект типа "точка"
@@ -570,7 +573,8 @@ void AddPointQuick(unsigned int ID, std::string Name, TTypeSymbol Type, TOnePoin
 Синтаксис:
 
 ```cpp
-bool AddPoint(unsigned int ID, std::string Name, TTypeSymbol Type, TOnePoint Point, QPen Pen, QBrush Brush)
+bool AddPoint(unsigned int ID, std::string Name, TTypeSymbol Type, 
+              TOnePoint Point, QPen Pen, QBrush Brush)
 ```
 
 5.19. _AddPolyLine_ добавляет в слой объект типа "полилиния"
