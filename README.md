@@ -648,6 +648,8 @@ std::string Name
 void* OWNER
 ```
 
+---
+
 ### 6. TMapData класс картографических данных
 Класс является держателем всех картографических данных, которые пользователь размещает на карте.
 #### Публичные типы
@@ -808,7 +810,9 @@ bool AddLayerDynamicPoint(void)
 unsigned int GetFreeID(std::string Name)
 ```
 
-6.15. _GetObjList_ возвращает список заголовков объектов в существующем слое. Обращается к слою по имени
+6.15. _GetObjList_ возвращает список заголовков объектов в существующем слое
+
+Обращается к слою по имени
 
 На вход подаются:
 
@@ -970,3 +974,6 @@ bool DelObjFromLayer(std::string Name, unsigned int ID)
 ```cpp
 int FindLayer(std::string Name)
 ```
+
+---
+
