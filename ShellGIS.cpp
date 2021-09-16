@@ -227,75 +227,9 @@ bool TShellGIS::AddLayerFromMIF(std::string LayerName, std::string FilePathName)
 }
 
 
-bool TShellGIS::AddLayerOpCat()
-{
-  return MapData->AddLayerOpCat();
-}
-
-
-bool TShellGIS::AddLayerRoute()
-{
-  return MapData->AddLayerRoute();
-}
-
-
-bool TShellGIS::AddLayerTrass(int Index, int WidthMI, int PatternMI, int ColorMI)
-{
-  return MapData->AddLayerTrass(Index, WidthMI, PatternMI, ColorMI);
-}
-
-
-void TShellGIS::SetCurrentTrass(int Index)
-{
-  MapData->SetCurrentTrass(Index);
-}
-
-
-bool TShellGIS::DelCurrentTrass()
-{
-  return MapData->DelCurrentTrass();
-}
-
-
-bool TShellGIS::AddLayerStrip(int Index, int WidthMI, int PatternMI, int ColorMI)
-{
-  return MapData->AddLayerStrip(Index, WidthMI, PatternMI, ColorMI);
-}
-
-
-void TShellGIS::SetCurrentStrip(int Index)
-{
-  MapData->SetCurrentStrip(Index);
-}
-
-
-bool TShellGIS::DelCurrentStrip()
-{
-  return MapData->DelCurrentStrip();
-}
-
-
 bool TShellGIS::AddLayerDynamicPoint()
 {
   return MapData->AddLayerDynamicPoint();
-}
-
-
-bool TShellGIS::AddLayerZRV(int Index, int WidthMI, int PatternMI, int ColorMI)
-{
-  return MapData->AddLayerZRV(Index, WidthMI, PatternMI, ColorMI);
-}
-
-
-void TShellGIS::SetCurrentZRV(int Index)
-{
-  MapData->SetCurrentZRV(Index);
-}
-
-
-bool TShellGIS::DelCurrentZRV()
-{
-  return MapData->DelCurrentZRV();
 }
 
 
@@ -311,36 +245,6 @@ TLayer::THeadersObjects TShellGIS::GetObjList(std::string Name)
 }
 
 
-bool TShellGIS::AddPointInOpCat(unsigned int ID, std::string Comment, bool Volition, TMultitude::TOnePoint Point)
-{
-  return MapData->AddPointInOpCat(ID, Comment, Volition, Point);
-}
-
-
-bool TShellGIS::AddAreaInOpCat(unsigned int ID, std::string Comment, bool Volition, TMultitude::TSpot Spot)
-{
-  return MapData->AddAreaInOpCat(ID, Comment, Volition, Spot);
-}
-
-
-bool TShellGIS::AddInRoute(unsigned int ID, std::string Comment, TMultitude::TSpot Spot)
-{
-  return MapData->AddInRoute(ID, Comment, Spot);
-}
-
-
-bool TShellGIS::AddInCurrentTrass(unsigned int ID, std::string Comment, TMultitude::TSpot Spot)
-{
-  return MapData->AddInCurrentTrass(ID, Comment, Spot);
-}
-
-
-bool TShellGIS::AddInCurrentStrip(unsigned int ID, std::string Comment, TMultitude::TSpot Spot)
-{
-  return MapData->AddInCurrentStrip(ID, Comment, Spot);
-}
-
-
 bool TShellGIS::AddInDynamicPoint(unsigned int ID, std::string Comment, TMultitude::TOnePoint Point, int ColorMI)
 {
   return MapData->AddInDynamicPoint(ID, Comment, Point, ColorMI);
@@ -350,12 +254,6 @@ bool TShellGIS::AddInDynamicPoint(unsigned int ID, std::string Comment, TMultitu
 void TShellGIS::MoveInDynamicPoint(unsigned int ID, std::string Comment, TMultitude::TOnePoint Point)
 {
   MapData->MoveInDynamicPoint(ID, Comment, Point);
-}
-
-
-bool TShellGIS::AddInCurrentZRV(unsigned int ID, std::string Comment, TMultitude::TSpot Spot)
-{
-  return MapData->AddInCurrentZRV(ID, Comment, Spot);
 }
 
 
