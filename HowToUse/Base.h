@@ -92,19 +92,6 @@ class TBase : public QObject
     // На вход подается текущее время [TDateTime]
     void AbsToOtnPrecision(TVector RAbs, TVector VAbs, double Time, TVector* ROtn, TVector* VOtn);
 
-    //Вычисляет угол азимута, под которым точка 2 видна из точки 1
-    // На вход подаются:
-    //   - B, L первой точки [рад],
-    //   - превышение первой точки над Общеземным эллипсоидом [м],
-    //   - B, L второй точки [рад],
-    //   - превышение второй точки над Общеземным эллипсоидом [м].
-    // На выходе можно получить:
-    //   - угол азимута [рад].
-    double AzimuthOfEnd(double B1, double L1, double H1, double B2, double L2, double H2);
-
-    //Безопасный круговой арктангенс
-    static double ArcTan(double sinF, double cosF);
-
     //Отрисовка ProgressBar
     void HowCalc(qint64 Index, qint64 Quantity);
 

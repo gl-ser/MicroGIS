@@ -83,6 +83,31 @@ return F;
 }
 
 
+double TCartography::ArcTan(double sinF, double cosF)
+{
+double F;
+  try
+  {
+    if (cosF != 0.0)
+    {
+      F = sinF/cosF;
+      F = atan(F);
+      if (cosF < 0.0) F = F + M_PI; else if (F < 0.0) F = F + M_PI + M_PI;
+    }
+    else
+    {
+      F = M_PI/2.0;
+      if (sinF < 0.0) F = F + M_PI;
+    }
+  }
+  catch(...)
+  {
+    F = 0.0;
+  }
+  return F;
+}
+
+
 int TCartography::Trunc(double Value)
 {
 int res;
@@ -412,6 +437,47 @@ double ALPHA = 0.003352803743019476734910221586237;
     *L = 0.0;
     *H = 0.0;
   }
+}
+
+
+double TCartography::AzimuthOfEnd(double B1, double L1, double H1, double B2, double L2, double H2)
+{
+double sb1, cb1, sl1, cl1, xn, yn, zn, x, y, z, rez4, rez6, r1, r2, r3, r4, Result;
+TVector RR;
+  try
+  {
+    //ПЕРЕВОД В ГСК ТОЧКИ НОМЕР 1
+    sb1 = sin(B1);
+    cb1 = cos(B1);
+    sl1 = sin(L1);
+    cl1 = cos(L1);
+    TCartography::BLHToOtn(B1, L1, H1, &RR);
+    xn = RR.x;
+    yn = RR.y;
+    zn = RR.z;
+
+    //ПЕРЕВОД В ГСК ТОЧКИ НОМЕР 2
+    TCartography::BLHToOtn(B2, L2, H2, &RR);
+    x = RR.x;
+    y = RR.y;
+    z = RR.z;
+
+    //ПЕРЕВОД В ТОПОЦЕНТРИЧЕСКУЮ СК ТОЧКИ НОМЕР 2 ОТНОСИТЕЛЬНО ТОЧКИ 1
+    r1 = z-zn;
+    r2 = x-xn;
+    r3 = y-yn;
+    r4 = r2*cl1+r3*sl1;
+    rez4 = cb1*r1-sb1*r4;
+    rez6 = r3*cl1-r2*sl1;
+
+    //РАСЧЕТ АЗИМУТА НА ТОЧКУ НОМЕР 2 ОТ ТОЧКИ 1
+    Result = TCartography::ArcTan(rez6, rez4);
+  }
+  catch(...)
+  {
+    Result = 0.0;
+  }
+return Result;
 }
 
 

@@ -181,13 +181,13 @@ TVector RSunAbs, RSunOtn, RMoonAbs, RMoonOtn, DummyAbs, DummyOtn, Point, Moon2, 
                        Base->LunarHeight(t, Point)*180.0/M_PI)));
 
     Base->AddToLogBook("Азимут Луны: " + QString::fromStdString(TNumerical::GradToString(
-                       Base->AzimuthOfEnd(Moscow.B, Moscow.L, 0.0, PointMoon.B, PointMoon.L, 0.0)*180.0/M_PI)));
+                       TCartography::AzimuthOfEnd(Moscow.B, Moscow.L, 0.0, PointMoon.B, PointMoon.L, 0.0)*180.0/M_PI)));
 
     Base->AddToLogBook("Склонение Солнца: " + QString::fromStdString(TNumerical::GradToString(
                        Base->SolarHeight(t, Point)*180.0/M_PI)));
 
     Base->AddToLogBook("Азимут Солнца: " + QString::fromStdString(TNumerical::GradToString(
-                       Base->AzimuthOfEnd(Moscow.B, Moscow.L, 0.0, PointSun.B, PointSun.L, 0.0)*180.0/M_PI)));
+                       TCartography::AzimuthOfEnd(Moscow.B, Moscow.L, 0.0, PointSun.B, PointSun.L, 0.0)*180.0/M_PI)));
 
     //Вектор, направленный из нашего района на Луну
     Moon2 = RMoonOtn - Point;

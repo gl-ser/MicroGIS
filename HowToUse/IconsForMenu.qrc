@@ -23,5 +23,8 @@
         <file>Map/WorldSeas.MIF</file>
         <file>Picture/Trass2Add.png</file>
         <file>Picture/Trass2Hide.png</file>
+        <file>Picture/Tools.png</file>
+        <file>Picture/Exit.png</file>
+        <file>Picture/Report.png</file>
     </qresource>
 </RCC>
