@@ -1,0 +1,27 @@
+﻿<RCC>
+    <qresource prefix="/1">
+        <file>Picture/Pic1.ico</file>
+        <file>Picture/Save.png</file>
+        <file>Picture/Clear.png</file>
+        <file>Picture/OKGreen.png</file>
+        <file>Picture/OKRed.png</file>
+        <file>Picture/WGS84.png</file>
+        <file>Picture/North.png</file>
+        <file>Picture/South.png</file>
+        <file>Picture/ShowAllMap.png</file>
+        <file>Picture/Arm.png</file>
+        <file>Picture/Arrow.png</file>
+        <file>Picture/LayerCtrl.png</file>
+        <file>Picture/Ruler.png</file>
+        <file>Picture/Kavrayskiy.png</file>
+        <file>Picture/Mercator.png</file>
+        <file>Picture/MapEditor.png</file>
+        <file>Map/WorldBorders.MIF</file>
+        <file>Map/WorldContinents.MIF</file>
+        <file>Map/WorldLakes.MIF</file>
+        <file>Map/WorldRivers.MIF</file>
+        <file>Map/WorldSeas.MIF</file>
+        <file>Picture/Trass2Add.png</file>
+        <file>Picture/Trass2Hide.png</file>
+    </qresource>
+</RCC>

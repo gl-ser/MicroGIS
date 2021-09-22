@@ -354,6 +354,8 @@ double TCartography::BToFi(double B, double H)
 void TCartography::BLHToOtn(double B, double L, double H, TVector *R)
 {
 double N, M, sb, cb, sl, cl;
+double RZEkv = 0.6378136e+7;
+double ALPHA = 0.003352803743019476734910221586237;
   try
   {
     sb = sin(B);
@@ -369,6 +371,46 @@ double N, M, sb, cb, sl, cl;
   catch(...)
   {
     R->Empty();
+  }
+}
+
+
+void TCartography::OtnToBLH(TVector R, double *B, double *L, double *H)
+{
+double rr, r1, fic, eMal, Re, delta, ekvadrat, SinFiC, CosFiC;
+double RZEkv = 0.6378136e+7;
+double ALPHA = 0.003352803743019476734910221586237;
+  try
+  {
+    if (R.getModul() == 0.0)
+    {
+      *B = 0.0;
+      *L = 0.0;
+      *H = 0.0;
+    }
+    else
+    {
+      *L = ArcTan2(R.y, R.x);
+      if (*L < 0.0) *L = M_PI*2.0 + *L;
+      r1 = static_cast<double>(sqrt(R.x*R.x + R.y*R.y));
+      rr = static_cast<double>(sqrt(r1*r1 + R.z*R.z));
+      SinFiC = R.z / rr;
+      CosFiC = r1 / rr;
+      fic = ArcTan2(R.z, r1);
+      ekvadrat = (2.0 - ALPHA) * ALPHA;
+      r1 = 1.0 - ekvadrat * CosFiC * CosFiC;
+      delta = ekvadrat * SinFiC * CosFiC / r1;
+      Re = RZEkv * sqrt(1.0 - ekvadrat) / sqrt(r1);
+      eMal = Re * delta / rr;
+      *B = fic + eMal;
+      *H = (rr - Re) * (1.0 - eMal * delta / 2.0);
+    }
+  }
+  catch(...)
+  {
+    *B = 0.0;
+    *L = 0.0;
+    *H = 0.0;
   }
 }
 
