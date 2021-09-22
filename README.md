@@ -11,6 +11,17 @@
 
 Состоит из 8 классов: TCartography, TView, TScene, TFrame, TLayer, TMapData, TGISLib, TShellGIS.
 
+В подкаталоге HowToUse находится программа "Астроном", демонстрирующая работу с движком геоинформационной системы.
+
+"Астроном" использует функционал:
+
+- Qt 5;
+- кватернионно-векторно-матричной библиотеки [QuatVectMatr](https://github.com/gl-ser/QuatVectMatr);
+- класса статических методов конвертации времени [Calendar](https://github.com/gl-ser/Calendar);
+- библиотеки работы с числовыми данными [Num](https://github.com/gl-ser/Num);
+- библиотеки логических манипуляций над множествами [Multitude](https://github.com/gl-ser/Multitude);
+- движка геоинформационной системы [GIS](https://github.com/gl-ser/GIS).
+
 ---
 
 ### 1. TCartography класс картографических преобразований
